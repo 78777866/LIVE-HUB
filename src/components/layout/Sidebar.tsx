@@ -47,7 +47,7 @@ export function Sidebar({ className }: SidebarProps) {
     <div className="relative flex h-full">
       <aside 
         className={cn(
-          'flex border-r border-slate-800/80 bg-slate-900/60 backdrop-blur z-20',
+          'flex border-r border-slate-800/80 bg-slate-900/60 backdrop-blur z-20 transition-all duration-slow',
           isCollapsed ? 'w-16' : 'w-80',
           className
         )}
@@ -61,7 +61,7 @@ export function Sidebar({ className }: SidebarProps) {
             )}
             <button
               onClick={() => setIsCollapsed(!isCollapsed)}
-              className="rounded-lg p-2 text-slate-400 hover:bg-slate-800/50 hover:text-slate-200"
+              className="rounded-lg p-2 text-slate-400 transition-colors duration-default hover:bg-slate-800/50 hover:text-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default"
               aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
             >
               {isCollapsed ? (
@@ -84,7 +84,7 @@ export function Sidebar({ className }: SidebarProps) {
               <div className="border-t border-slate-800/80 pt-4">
                 <button
                   onClick={() => router.push('/settings')}
-                  className="flex items-center gap-3 w-full rounded-lg p-3 text-slate-300 hover:bg-slate-800/50 hover:text-slate-100 transition-colors"
+                  className="flex items-center gap-3 w-full rounded-lg p-3 text-slate-300 transition-colors duration-default hover:bg-slate-800/50 hover:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default"
                 >
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -101,7 +101,7 @@ export function Sidebar({ className }: SidebarProps) {
               <button 
                 onClick={() => setActivePanel(activePanel === 'session' ? null : 'session')}
                 className={cn(
-                  "h-10 w-10 rounded-lg flex items-center justify-center",
+                  "h-10 w-10 rounded-lg flex items-center justify-center transition-colors duration-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default",
                   activePanel === 'session' 
                     ? 'bg-sky-500/20 text-sky-300 border border-sky-500/50' 
                     : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-slate-100'
@@ -113,7 +113,7 @@ export function Sidebar({ className }: SidebarProps) {
               <button 
                 onClick={() => setActivePanel(activePanel === 'repository' ? null : 'repository')}
                 className={cn(
-                  "h-10 w-10 rounded-lg flex items-center justify-center",
+                  "h-10 w-10 rounded-lg flex items-center justify-center transition-colors duration-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default",
                   activePanel === 'repository' 
                     ? 'bg-sky-500/20 text-sky-300 border border-sky-500/50' 
                     : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-slate-100'
@@ -125,7 +125,7 @@ export function Sidebar({ className }: SidebarProps) {
               <button 
                 onClick={() => setActivePanel(activePanel === 'filetree' ? null : 'filetree')}
                 className={cn(
-                  "h-10 w-10 rounded-lg flex items-center justify-center",
+                  "h-10 w-10 rounded-lg flex items-center justify-center transition-colors duration-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default",
                   activePanel === 'filetree' 
                     ? 'bg-sky-500/20 text-sky-300 border border-sky-500/50' 
                     : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-slate-100'
@@ -137,7 +137,7 @@ export function Sidebar({ className }: SidebarProps) {
               <div className="border-t border-slate-800/80 pt-4">
                 <button
                   onClick={() => router.push('/settings')}
-                  className="h-10 w-10 rounded-lg flex items-center justify-center bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-slate-100"
+                  className="h-10 w-10 rounded-lg flex items-center justify-center bg-slate-800/50 text-slate-300 transition-colors duration-default hover:bg-slate-700/50 hover:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default"
                   aria-label="Settings"
                 >
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -95,7 +95,7 @@ export function EditorPanel() {
               key={file.path}
               onClick={() => useAppStore.getState().setActiveFile(file.path)}
               className={cn(
-                'flex items-center gap-1 rounded border border-transparent px-1.5 py-0.5 text-left transition whitespace-nowrap',
+                'flex items-center gap-1 rounded border border-transparent px-1.5 py-0.5 text-left transition-colors duration-default whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default',
                 file.path === activeFilePath
                   ? 'bg-sky-500/20 border-sky-500/50 text-sky-200'
                   : 'hover:border-slate-700 hover:bg-slate-800/50 text-slate-400'
