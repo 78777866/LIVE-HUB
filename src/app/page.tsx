@@ -15,7 +15,7 @@ export default function HomePage() {
   const webContainerStatusLabel = webContainerStatus.replace(/-/g, ' ')
 
   return (
-    <main className="flex min-h-screen flex-col">
+    <main id="main-content" className="flex min-h-screen flex-col">
       <header className="flex flex-col gap-4 border-b border-slate-800/80 bg-slate-950/70 p-4 shadow-xl shadow-slate-950/40 backdrop-blur">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>

@@ -22,6 +22,15 @@
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
   --ring: 222.2 84% 4.9%;
+  
+  /* Motion and focus tokens */
+  --transition-default: 150ms ease;
+  --transition-slow: 300ms ease;
+  --transition-fast: 100ms ease;
+  --ring-offset: 2px;
+  --ring-width: 2px;
+  --focus-ring: hsl(var(--ring)) / 0.5;
+  --focus-ring-visible: hsl(var(--ring));
   color-scheme: light;
 }
 
@@ -45,6 +54,15 @@
   --border: 217.2 32.6% 17.5%;
   --input: 217.2 32.6% 17.5%;
   --ring: 212.7 26.8% 83.9%;
+  
+  /* Motion and focus tokens */
+  --transition-default: 150ms ease;
+  --transition-slow: 300ms ease;
+  --transition-fast: 100ms ease;
+  --ring-offset: 2px;
+  --ring-width: 2px;
+  --focus-ring: hsl(var(--ring)) / 0.5;
+  --focus-ring-visible: hsl(var(--ring));
   color-scheme: dark;
 }
 
@@ -58,6 +76,48 @@ body {
 
 a {
   @apply text-sky-400 underline-offset-4 transition hover:text-sky-300;
+}
+
+/* Global focus styles using tokens */
+* {
+  &:focus-visible {
+    outline: var(--ring-width) solid var(--focus-ring-visible);
+    outline-offset: var(--ring-offset);
+  }
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  @apply absolute -top-16 left-0 z-50 rounded-md bg-primary px-4 py-2 text-primary-foreground transition-[top] focus-visible:top-4;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Respect user preference for reduced motion */
+  .animate-ping,
+  .animate-pulse,
+  .animate-spin,
+  .animate-bounce {
+    animation: none !important;
+  }
+  
+  /* Show static states instead of animated ones */
+  .animate-ping {
+    opacity: 1;
+  }
+  
+  .animate-pulse {
+    opacity: 1;
+  }
 }
 
 ::-webkit-scrollbar {

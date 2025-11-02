@@ -46,7 +46,7 @@ export function ConsolePanel() {
             onClick={resetConsole}
             disabled={consoleLines.length === 0}
             className={cn(
-              'rounded-full border px-1.5 py-0.5 uppercase tracking-[0.15em] transition',
+              'rounded-full border px-1.5 py-0.5 uppercase tracking-[0.15em] transition-colors duration-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default',
               'border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white',
               consoleLines.length === 0 &&
                 'cursor-not-allowed border-slate-800 text-slate-600 hover:border-slate-800 hover:text-slate-600',

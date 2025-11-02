@@ -49,6 +49,20 @@ const config: Config = {
           foreground: 'hsl(var(--card-foreground))',
         },
       },
+      transitionDuration: {
+        DEFAULT: 'var(--transition-default)',
+        slow: 'var(--transition-slow)',
+        fast: 'var(--transition-fast)',
+      },
+      transitionTimingFunction: {
+        DEFAULT: 'ease',
+      },
+      ringOffsetWidth: {
+        DEFAULT: 'var(--ring-offset)',
+      },
+      ringWidth: {
+        DEFAULT: 'var(--ring-width)',
+      },
     },
   },
   plugins: [],

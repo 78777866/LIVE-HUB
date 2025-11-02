@@ -98,7 +98,7 @@ export function SessionPanel() {
           disabled={loading}
           onClick={handlePrimaryAction}
           className={cn(
-            'group inline-flex items-center justify-center rounded-lg border px-2 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-100 transition',
+            'group inline-flex items-center justify-center rounded-lg border px-2 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-100 transition-colors duration-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default',
             isAuthenticated
               ? 'border-emerald-500/50 bg-emerald-500/15 hover:border-emerald-400 hover:bg-emerald-500/25'
               : 'border-slate-600 bg-slate-800/70 hover:border-slate-400 hover:bg-slate-700',

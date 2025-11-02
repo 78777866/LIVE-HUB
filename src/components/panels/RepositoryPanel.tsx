@@ -171,7 +171,7 @@ export function RepositoryPanel() {
             <p className="text-rose-200 mb-1">{reposError}</p>
             <button
               onClick={refetchRepos}
-              className="text-[9px] bg-rose-600/20 hover:bg-rose-600/30 border border-rose-600/60 rounded px-1.5 py-0.5 transition"
+              className="text-[9px] bg-rose-600/20 hover:bg-rose-600/30 border border-rose-600/60 rounded px-1.5 py-0.5 transition-colors duration-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default"
             >
               Retry
             </button>
@@ -212,7 +212,7 @@ export function RepositoryPanel() {
                   type="button"
                   onClick={() => selectRepository(repository.id)}
                   className={cn(
-                    'w-full rounded-lg border px-2 py-1.5 text-left transition',
+                    'w-full rounded-lg border px-2 py-1.5 text-left transition-colors duration-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default',
                     'border-slate-800/60 bg-slate-900/60 hover:border-slate-600 hover:bg-slate-900/90',
                     isActive
                       ? 'border-sky-500/60 bg-sky-500/15 shadow-[0_0_12px_rgba(56,189,248,0.15)]'
@@ -248,7 +248,7 @@ export function RepositoryPanel() {
         {hasMore && !reposLoading && (
           <button
             onClick={fetchNextPage}
-            className="w-full py-1 text-[9px] text-slate-400 hover:text-slate-200 transition border border-slate-800/60 rounded-lg hover:border-slate-600"
+            className="w-full py-1 text-[9px] text-slate-400 hover:text-slate-200 transition-colors duration-default border border-slate-800/60 rounded-lg hover:border-slate-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default"
           >
             Load more...
           </button>
@@ -306,7 +306,7 @@ export function RepositoryPanel() {
                 onClick={handleLaunch}
                 disabled={!selectedRepository || isLaunching}
                 className={cn(
-                  'rounded-full border px-2 py-1 transition',
+                  'rounded-full border px-2 py-1 transition-colors duration-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default',
                   'border-sky-600/60 bg-sky-600/20 text-sky-200 hover:border-sky-400 hover:bg-sky-500/30',
                   (!selectedRepository || isLaunching) &&
                     'cursor-not-allowed border-slate-700 bg-slate-900/60 text-slate-500 hover:border-slate-700 hover:bg-slate-900/60 hover:text-slate-500',
@@ -319,7 +319,7 @@ export function RepositoryPanel() {
                 onClick={handleCancel}
                 disabled={!canCancelInstall}
                 className={cn(
-                  'rounded-full border px-2 py-1 transition',
+                  'rounded-full border px-2 py-1 transition-colors duration-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default',
                   'border-amber-500/50 bg-amber-500/10 text-amber-200 hover:border-amber-400 hover:bg-amber-500/20',
                   !canCancelInstall &&
                     'cursor-not-allowed border-slate-700 bg-slate-900/60 text-slate-500 hover:border-slate-700 hover:bg-slate-900/60 hover:text-slate-500',
@@ -332,7 +332,7 @@ export function RepositoryPanel() {
                 onClick={handleStop}
                 disabled={!canStopServer}
                 className={cn(
-                  'rounded-full border px-2 py-1 transition',
+                  'rounded-full border px-2 py-1 transition-colors duration-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default',
                   'border-rose-500/60 bg-rose-500/10 text-rose-200 hover:border-rose-400 hover:bg-rose-500/20',
                   !canStopServer &&
                     'cursor-not-allowed border-slate-700 bg-slate-900/60 text-slate-500 hover:border-slate-700 hover:bg-slate-900/60 hover:text-slate-500',
@@ -374,7 +374,7 @@ export function RepositoryPanel() {
               <div>
                 <div className="h-1 w-full overflow-hidden rounded-full bg-slate-800/70">
                   <div
-                    className="h-full rounded-full bg-sky-500 transition-all duration-300"
+                    className="h-full rounded-full bg-sky-500 transition-all duration-slow"
                     style={{ width: `${Math.max(6, Math.min(100, Math.round(webContainer.installProgress)))}%` }}
                   />
                 </div>

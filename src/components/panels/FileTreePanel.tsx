@@ -222,7 +222,7 @@ function FileNodeItem({
     <li>
       <div
         className={cn(
-          'flex w-full items-center gap-1 rounded border border-transparent px-1.5 py-1 text-left transition hover:border-slate-700 hover:bg-slate-800/50',
+          'flex w-full items-center gap-1 rounded border border-transparent px-1.5 py-1 text-left transition-colors duration-default hover:border-slate-700 hover:bg-slate-800/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-default',
           node.isExpanded && isDirectory ? 'border-slate-700 bg-slate-900/60' : undefined,
         )}
         style={{ paddingLeft: padding + 6 }}
