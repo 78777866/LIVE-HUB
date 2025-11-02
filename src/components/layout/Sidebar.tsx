@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { SessionPanel } from '@/components/panels/SessionPanel'
 import { RepositoryPanel } from '@/components/panels/RepositoryPanel'
 import { FileTreePanel } from '@/components/panels/FileTreePanel'
@@ -15,6 +16,7 @@ type ActivePanel = 'session' | 'repository' | 'filetree' | null
 export function Sidebar({ className }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false)
   const [activePanel, setActivePanel] = useState<ActivePanel>(null)
+  const router = useRouter()
 
   const getPanelIcon = (panelType: ActivePanel) => {
     switch (panelType) {
@@ -79,6 +81,18 @@ export function Sidebar({ className }: SidebarProps) {
               <SessionPanel />
               <RepositoryPanel />
               <FileTreePanel />
+              <div className="border-t border-slate-800/80 pt-4">
+                <button
+                  onClick={() => router.push('/settings')}
+                  className="flex items-center gap-3 w-full rounded-lg p-3 text-slate-300 hover:bg-slate-800/50 hover:text-slate-100 transition-colors"
+                >
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span className="text-sm font-medium">Settings</span>
+                </button>
+              </div>
             </div>
           )}
           
@@ -120,6 +134,18 @@ export function Sidebar({ className }: SidebarProps) {
               >
                 {getPanelIcon('filetree')}
               </button>
+              <div className="border-t border-slate-800/80 pt-4">
+                <button
+                  onClick={() => router.push('/settings')}
+                  className="h-10 w-10 rounded-lg flex items-center justify-center bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:text-slate-100"
+                  aria-label="Settings"
+                >
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </button>
+              </div>
             </div>
           )}
         </div>

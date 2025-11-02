@@ -1,7 +1,12 @@
 'use client'
 
 import { PropsWithChildren } from 'react'
+import { ThemeProvider } from 'next-themes'
 
 export function AppShellProviders({ children }: PropsWithChildren) {
-  return <div className="__app-container">{children}</div>
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <div className="__app-container">{children}</div>
+    </ThemeProvider>
+  )
 }
